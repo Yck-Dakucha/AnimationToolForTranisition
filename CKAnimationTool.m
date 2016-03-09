@@ -26,8 +26,8 @@
     });
     return animation;
 }
-
-- (CAAnimation *)ck_animationWithType:(CKViewAnimationTransition)animationType direction:(CKViewAnimationDirection)direction {
++ (CAAnimation *)ck_animationWithType:(CKViewAnimationTransition)animationType direction:(CKViewAnimationDirection)direction {
+    CKAnimationTool *animationTool = [CKAnimationTool ck_animation];
     CATransition *animation = [CATransition animation];
     [animation setDuration: kAnimationDuration];
     switch (animationType) {
@@ -93,16 +93,17 @@
     }
     
     [animation setTimingFunction:[CAMediaTimingFunction functionWithName:kCAMediaTimingFunctionDefault]];
-    animation.delegate = self;
+    animation.delegate = animationTool;
     return animation;
 }
 
-- (void)ck_setAnimationStart:(ck_animationCompleteBlock)start Complete:(ck_animationCompleteBlock)finished {
++ (void)ck_setAnimationStart:(ck_animationCompleteBlock)start Complete:(ck_animationCompleteBlock)finished {
+    CKAnimationTool *animationTool = [CKAnimationTool ck_animation];
     if (start) {
-        self.animationStartBlock = start;
+        animationTool.animationStartBlock = start;
     }
     if (finished) {
-        self.animationFinishedBlock = finished;
+        animationTool.animationFinishedBlock = finished;
     }
 }
 

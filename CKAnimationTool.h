@@ -35,12 +35,6 @@ typedef void(^ck_animationCompleteBlock)(BOOL finished);
 
 @interface CKAnimationTool : NSObject
 /**
- *  动画工具单例
- *
- *  @return
- */
-+ (instancetype)ck_animation;
-/**
  *  获取转场动画
  *
  *  @param animationType 动画方式
