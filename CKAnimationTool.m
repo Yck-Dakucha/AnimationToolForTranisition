@@ -26,6 +26,7 @@
     });
     return animation;
 }
+
 + (CAAnimation *)ck_animationWithType:(CKViewAnimationTransition)animationType direction:(CKViewAnimationDirection)direction {
     CKAnimationTool *animationTool = [CKAnimationTool ck_animation];
     CATransition *animation = [CATransition animation];

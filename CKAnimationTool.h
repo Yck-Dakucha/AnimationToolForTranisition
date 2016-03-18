@@ -42,13 +42,13 @@ typedef void(^ck_animationCompleteBlock)(BOOL finished);
  *
  *  @return 动画
  */
-- (CAAnimation *)ck_animationWithType:(CKViewAnimationTransition)animationType direction:(CKViewAnimationDirection)direction;
++ (CAAnimation *)ck_animationWithType:(CKViewAnimationTransition)animationType direction:(CKViewAnimationDirection)direction;
 /**
  *  设置动画代理事件
  *
  *  @param start    动画开始
  *  @param finished 动画结束
  */
-- (void)ck_setAnimationStart:(ck_animationCompleteBlock)start Complete:(ck_animationCompleteBlock)finished;
++ (void)ck_setAnimationStart:(ck_animationCompleteBlock)start Complete:(ck_animationCompleteBlock)finished;
 
 @end
